@@ -10,19 +10,7 @@ $query = mysqli_query($conn, "SELECT * FROM bookings");
         <meta charset="UTF-8">
         <title>Bookings List</title>
         <link rel="stylesheet" href="../style.css"> 
-        <style>
-            table { 
-                width: 100%; 
-                border-collapse: collapse; 
-                margin-top: 20px; 
-            }
 
-            th, td { 
-                border: 1px solid #ddd; 
-                padding: 10px; 
-                text-align: left; 
-            }
-        </style>
     </head>
     <body>
         <?php include "../nav.php"; ?>
@@ -32,7 +20,7 @@ $query = mysqli_query($conn, "SELECT * FROM bookings");
         <table>
             <thead>
                 <tr>
-                    <th>Booking ID</th>
+                    <th>ID</th>
                     <th>Client ID</th>
                     <th>Service ID</th>
                     <th>Date</th>

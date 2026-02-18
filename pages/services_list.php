@@ -11,19 +11,6 @@ $query = mysqli_query($conn, "SELECT * FROM services");
     <title>Services List</title>
     <link rel="stylesheet" href="../style.css"> 
 
-    <style>
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 20px; 
-        }
-
-        th, td { 
-            border: 1px solid #ddd; 
-            padding: 10px; 
-            text-align: left; 
-        }
-    </style>
 </head>
 <body>
     <?php include "../nav.php"; ?>

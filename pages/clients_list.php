@@ -11,19 +11,6 @@ $query = mysqli_query($conn, "SELECT * FROM clients");
     <title>Clients List</title>
     <link rel="stylesheet" href="../style.css"> 
 
-    <style>
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 20px; 
-        }
-
-        th, td { 
-            border: 1px solid #ddd; 
-            padding: 10px; 
-            text-align: left; 
-        }
-    </style>
 </head>
 <body>
     <?php include "../nav.php"; ?>
@@ -47,7 +34,7 @@ $query = mysqli_query($conn, "SELECT * FROM clients");
                     <td><?php echo $row['client_id']; ?></td>
                     <td><strong><?php echo $row['full_name']; ?></strong></td>
                     <td><?php echo $row['email']; ?></td>
-                    <td>₱<?php echo number_format($row['phone'], 2); ?></td>
+                    <td><?php echo number_format($row['phone'], 2); ?></td>
                     <td><?php echo $row['address']; ?></td>
                     <td><?php echo date("M d, Y", strtotime($row['created_at'])); ?></td>
                 </tr>

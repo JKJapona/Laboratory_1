@@ -19,14 +19,29 @@
     <body>
         <?php include "nav.php"; ?>
         
-        <h1>Dashboard</h2>
+        <h1>Dashboard</h1>
         
-        <ul>
-            <li>Total Clients: <b><?php echo $clients; ?></b></li>
-            <li>Total Services: <b><?php echo $services; ?></b></li>
-            <li>Total Bookings: <b><?php echo $bookings; ?></b></li>
-            <li>Total Revenue: <b>₱<?php echo number_format($revenue,2); ?></b></li>
-        </ul>
+        <div class="container">
+            <a href="/assessment_beginner/pages/clients_list.php" class="card">
+                <span>Total Clients</span>
+                <div class="value"><?php echo $clients; ?></div>
+            </a>
+
+            <a href="/assessment_beginner/pages/services_list.php" class="card">
+                <span>Total Services</span>
+                <div class="value"><?php echo $services; ?></div>
+            </a>
+
+            <a href="/assessment_beginner/pages/bookings_list.php" class="card">
+                <span>Total Bookings</span>
+                <div class="value"><?php echo $bookings; ?></div>
+            </a>
+
+            <a href="/assessment_beginner/pages/payments_list.php" class="card">
+                <span>Total Revenue</span>
+                <div class="value">₱<?php echo number_format($revenue, 2); ?></div>
+            </a>
+        </div>
         
         <p>
             Quick links:
