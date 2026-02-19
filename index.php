@@ -21,23 +21,23 @@
         
         <h1>Dashboard</h1>
         
-        <div class="container">
-            <a href="/assessment_beginner/pages/clients_list.php" class="card">
+        <div class="kpi_container">
+            <a href="/assessment_beginner/pages/clients_list.php" class="kpi_card">
                 <span>Total Clients</span>
                 <div class="value"><?php echo $clients; ?></div>
             </a>
 
-            <a href="/assessment_beginner/pages/services_list.php" class="card">
+            <a href="/assessment_beginner/pages/services_list.php" class="kpi_card">
                 <span>Total Services</span>
                 <div class="value"><?php echo $services; ?></div>
             </a>
 
-            <a href="/assessment_beginner/pages/bookings_list.php" class="card">
+            <a href="/assessment_beginner/pages/bookings_list.php" class="kpi_card">
                 <span>Total Bookings</span>
                 <div class="value"><?php echo $bookings; ?></div>
             </a>
 
-            <a href="/assessment_beginner/pages/payments_list.php" class="card">
+            <a href="/assessment_beginner/pages/payments_list.php" class="kpi_card">
                 <span>Total Revenue</span>
                 <div class="value">₱<?php echo number_format($revenue, 2); ?></div>
             </a>

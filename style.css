@@ -24,14 +24,14 @@ th {
     background-color: #f8f8f8;
 }
 
-.container {
+.kpi_container {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
-.card {
+.kpi_card {
     text-decoration: none;
     border: 1px solid #ddd;
     background: #f8f8f8;
@@ -40,18 +40,84 @@ th {
     transition: all 0.2s ease;
 }
 
-.card:hover {
+.kpi_card:hover {
     background-color: #ffffff;
     border-color: #00b7ff;
     font-weight: bold;
 }
 
-.card span {
+.kpi_card span {
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-.card .value {
+.kpi_card .value {
     font-size: 30px;
     text-align: right;
+}
+
+.form-container {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+input:focus, 
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #00b7ff;
+    background: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 183, 255, 0.2);
+}
+
+.btn-submit {
+    background-color: #f8f8f8;;
+    color: #551A8B;
+    padding: 12px 24px;
+    border: 1px solid #c2c2c2;
+    font-size: 20px;
+    transition: all 0.2s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn-submit:hover {
+    background-color: white;
+    border-color: #00b7ff;
+}
+
+.btn-submit:active, .kpi_card:active{
+    color: #EE0000;
+    border-color: #EE0000;
+    background-color: #fff0f0;
+    transform: scale(0.98)
 }
