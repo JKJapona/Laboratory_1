@@ -14,31 +14,31 @@ $query = mysqli_query($conn, "SELECT * FROM booking_tools");
 </head>
 <body>
     <?php include "../nav.php"; ?>
+    <div class="content">
+        <h1>Booking Tools</h1>
 
-    <h1>Booking Tools</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Booking ID</th>
-                <th>Tool ID</th>
-                <th>Quantity Used</th>
-                <th>Date Created</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while($row = mysqli_fetch_assoc($query)): ?>
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo $row['booking_tool_id']; ?></td>
-                    <td><strong><?php echo $row['booking_id']; ?></strong></td>
-                    <td><?php echo $row['tool_id']; ?></td>
-                    <td>₱<?php echo number_format($row['qty_used'], 2); ?></td>
-                    <td><?php echo date("M d, Y", strtotime($row['created_at'])); ?></td>
+                    <th>ID</th>
+                    <th>Booking ID</th>
+                    <th>Tool ID</th>
+                    <th>Quantity Used</th>
+                    <th>Date Created</th>
                 </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
-
+            </thead>
+            <tbody>
+                <?php while($row = mysqli_fetch_assoc($query)): ?>
+                    <tr>
+                        <td><?php echo $row['booking_tool_id']; ?></td>
+                        <td><strong><?php echo $row['booking_id']; ?></strong></td>
+                        <td><?php echo $row['tool_id']; ?></td>
+                        <td>₱<?php echo number_format($row['qty_used'], 2); ?></td>
+                        <td><?php echo date("M d, Y", strtotime($row['created_at'])); ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

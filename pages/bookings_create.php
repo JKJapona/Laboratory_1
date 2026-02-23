@@ -29,52 +29,55 @@ $services = $conn->query("SELECT service_id, service_name, hourly_rate FROM serv
 </head>
 <body>
     <?php include "../nav.php"; ?>
-    <h1>Create New Booking</h1>
 
-    <div class="form-container">
-        <form method="POST">
+    <div class="content">
+        <h1>Create New Booking</h1>
 
-            <div class="form-group">
-                <label>Select Client</label>
+        <div class="form-container">
+            <form method="POST">
 
-                <select name="client_id" required>
-                    <?php while($c = $clients->fetch_assoc()): ?>
+                <div class="form-group">
+                    <label>Select Client</label>
 
-                        <option value="<?php echo $c['client_id']; ?>">
-                            <?php echo $c['full_name']; ?>
-                        </option>
+                    <select name="client_id" required>
+                        <?php while($c = $clients->fetch_assoc()): ?>
 
-                    <?php endwhile; ?>
-                </select>
-            </div>
+                            <option value="<?php echo $c['client_id']; ?>">
+                                <?php echo $c['full_name']; ?>
+                            </option>
 
-            <div class="form-group">
-                <label>Select Service</label>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
 
-                <select name="service_id" required>
-                    <?php while($s = $services->fetch_assoc()): ?>
+                <div class="form-group">
+                    <label>Select Service</label>
 
-                        <option value="<?php echo $s['service_id']; ?>
-                            "><?php echo $s['service_name']; ?> 
-                            (₱<?php echo $s['hourly_rate']; ?>/hr)
-                        </option>
-                        
-                    <?php endwhile; ?>
-                </select>
-            </div>
+                    <select name="service_id" required>
+                        <?php while($s = $services->fetch_assoc()): ?>
 
-            <div class="form-group">
-                <label>Booking Date</label>
-                <input type="date" name="booking_date" required>
-            </div>
+                            <option value="<?php echo $s['service_id']; ?>
+                                "><?php echo $s['service_name']; ?> 
+                                (₱<?php echo $s['hourly_rate']; ?>/hr)
+                            </option>
+                            
+                        <?php endwhile; ?>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label>Number of Hours</label>
-                <input type="number" name="hours" min="1" value="1" required>
-            </div>
+                <div class="form-group">
+                    <label>Booking Date</label>
+                    <input type="date" name="booking_date" required>
+                </div>
 
-            <button type="submit" class="btn-submit">Create Booking</button>
-        </form>
+                <div class="form-group">
+                    <label>Number of Hours</label>
+                    <input type="number" name="hours" min="1" value="1" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Create Booking</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

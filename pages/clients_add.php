@@ -25,33 +25,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
         <?php include "../nav.php"; ?>
 
-        <h1>Add Client</h1>
-
-        <div class="form-container">
+        <div class="content">
+            <div class="form-header">
+                <h1>Add Client</h1>
+            </div>
             
-            <form action="" method="POST">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="full_name" required placeholder="Juan Dela Cruz">
-                </div>
+            <div class="form-container">
+                
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="full_name" required placeholder="Juan Dela Cruz">
+                    </div>
 
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" required placeholder="juan@example.com">
-                </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" required placeholder="juan@example.com">
+                    </div>
 
-                <div class="form-group">
-                    <label>Phone</label>
-                    <input type="text" name="phone">
-                </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" name="phone">
+                    </div>
 
-                <div class="form-group">
-                    <label>Address</label>
-                    <textarea name="address" rows="3"></textarea>
-                </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea name="address" rows="3"></textarea>
+                    </div>
 
-                <button type="submit" class="btn-submit">Add Client</button>
-            </form>
+                    <button type="submit" class="btn-submit">Add Client</button>
+                </form>
+            </div>
         </div>
     </body>
 </html>
