@@ -1,7 +1,7 @@
 <?php
 include "../db.php"; 
 
-$query = mysqli_query($conn, "SELECT * FROM clients");
+$query = mysqli_query($conn, "SELECT * FROM clients ORDER BY client_id DESC");
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +16,7 @@ $query = mysqli_query($conn, "SELECT * FROM clients");
     <?php include "../nav.php"; ?>
 
     <h1>Clients</h1>
+    <p><a href="clients_add.php">+ Add Client</a></p>
 
     <table>
         <thead>
@@ -32,11 +33,12 @@ $query = mysqli_query($conn, "SELECT * FROM clients");
             <?php while($row = mysqli_fetch_assoc($query)): ?>
                 <tr>
                     <td><?php echo $row['client_id']; ?></td>
-                    <td><strong><?php echo $row['full_name']; ?></strong></td>
+                    <td><?php echo $row['full_name']; ?></td>
                     <td><?php echo $row['email']; ?></td>
-                    <td><?php echo number_format($row['phone'], 2); ?></td>
+                    <td><?php echo $row['phone']; ?></td>
                     <td><?php echo $row['address']; ?></td>
                     <td><?php echo date("M d, Y", strtotime($row['created_at'])); ?></td>
+                    <td><a href="clients_edit.php?id=<?php echo $row['client_id']; ?>">Edit</a></td>
                 </tr>
             <?php endwhile; ?>
         </tbody>
