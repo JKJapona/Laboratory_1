@@ -23,10 +23,9 @@ $query = mysqli_query($conn, "SELECT * FROM services");
                 <tr>
                     <th>ID</th>
                     <th>Service Name</th>
-                    <th>Description</th>
                     <th>Hourly Rate</th>
                     <th>Status</th>
-                    <th>Date Created</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,16 +33,9 @@ $query = mysqli_query($conn, "SELECT * FROM services");
                     <tr>
                         <td><?php echo $row['service_id']; ?></td>
                         <td><strong><?php echo $row['service_name']; ?></strong></td>
-                        <td><?php echo $row['description']; ?></td>
                         <td>₱<?php echo number_format($row['hourly_rate'], 2); ?></td>
-                        <td>
-                            <?php if($row['is_active'] == 1): ?>
-                                <p1>Active</p1>
-                            <?php else: ?>
-                                <p1>Inactive</p1>
-                            <?php endif; ?>
-                        </td>
-                        <td><?php echo date("M d, Y", strtotime($row['created_at'])); ?></td>
+                        <td><?php echo $row['is_active'] ? "Yes" : "No"; ?></td>
+                        <td><a href="services_edit.php?id=<?php echo $row['service_id']; ?>">Edit</a></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
