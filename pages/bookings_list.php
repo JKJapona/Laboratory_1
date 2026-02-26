@@ -36,10 +36,11 @@ $query = mysqli_query($conn, $sql);
                         <th>Rate Snapshot</th>
                         <th>Total Cost</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while($row = mysqli_fetch_assoc($query)): ?>
+                    <?php while($row = mysqli_fetch_assoc($query)) { ?>
                         <tr>
                             <td><?php echo $row['booking_id']; ?></td>
                             <td><?php echo $row['client_name']; ?></td>
@@ -49,8 +50,9 @@ $query = mysqli_query($conn, $sql);
                             <td>₱<?php echo number_format($row['hourly_rate_snapshot'], 2); ?></td>
                             <td>₱<?php echo number_format($row['total_cost'], 2); ?></td>
                             <td><?php echo $row['status']; ?></td>
+                            <td><a href="payment_process.php?booking_id=<?php echo $row['booking_id']; ?>">Pay</a></td>
                         </tr>
-                    <?php endwhile; ?>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

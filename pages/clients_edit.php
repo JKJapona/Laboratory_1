@@ -38,9 +38,9 @@
         
         <div class="content">
             <h1>Edit Client</h1>
-            <p style="color:red;"><?php echo $message; ?></p>
 
             <div class="form-container">
+                <p2 style="color:red;"><?php echo $message; ?></p2>
                 
                 <form method="post">
                     <div class="form-group">

@@ -29,7 +29,7 @@ $query = mysqli_query($conn, "SELECT * FROM services");
                 </tr>
             </thead>
             <tbody>
-                <?php while($row = mysqli_fetch_assoc($query)): ?>
+                <?php while($row = mysqli_fetch_assoc($query)) { ?>
                     <tr>
                         <td><?php echo $row['service_id']; ?></td>
                         <td><strong><?php echo $row['service_name']; ?></strong></td>
@@ -37,7 +37,7 @@ $query = mysqli_query($conn, "SELECT * FROM services");
                         <td><?php echo $row['is_active'] ? "Yes" : "No"; ?></td>
                         <td><a href="services_edit.php?id=<?php echo $row['service_id']; ?>">Edit</a></td>
                     </tr>
-                <?php endwhile; ?>
+                <?php } ?>
             </tbody>
         </table>
     </div>

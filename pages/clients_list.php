@@ -29,7 +29,7 @@ $query = mysqli_query($conn, "SELECT * FROM clients ORDER BY client_id DESC");
                 </tr>
             </thead>
             <tbody>
-                <?php while($row = mysqli_fetch_assoc($query)): ?>
+                <?php while($row = mysqli_fetch_assoc($query)) { ?>
                     <tr>
                         <td><?php echo $row['client_id']; ?></td>
                         <td><?php echo $row['full_name']; ?></td>
@@ -37,7 +37,7 @@ $query = mysqli_query($conn, "SELECT * FROM clients ORDER BY client_id DESC");
                         <td><?php echo $row['phone']; ?></td>
                         <td><a href="clients_edit.php?id=<?php echo $row['client_id']; ?>">Edit</a></td>
                     </tr>
-                <?php endwhile; ?>
+                <?php } ?>
             </tbody>
         </table>
 

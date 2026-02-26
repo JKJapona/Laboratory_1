@@ -1,6 +1,7 @@
 <?php
 include "../db.php"; 
 
+$message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $full_name = $_POST['full_name'];
@@ -8,9 +9,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone     = $_POST['phone'];
     $address   = $_POST['address'];
 
-    $sql = "INSERT INTO clients (full_name, email, phone, address) VALUES ('$full_name', '$email', '$phone', '$address')";
-    $conn->query($sql);
+    if ($full_name == "" || $email == "") {
+        $message = "Name and Email are required!";
+    } else {
+        $sql = "INSERT INTO clients (full_name, email, phone, address)
+            VALUES ('$full_name', '$email', '$phone', '$address')";
+        mysqli_query($conn, $sql);
         header("Location: clients_list.php");
+        exit;
+    }
 }
 ?>
 
@@ -31,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             
             <div class="form-container">
+                <p2 style="color:red;"><?php echo $message; ?></p2>
                 
                 <form action="" method="POST">
                     <div class="form-group">

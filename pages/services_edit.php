@@ -31,32 +31,32 @@
         <?php include "../nav.php"; ?>
         
         <div class="content">
-            <h2>Edit Service</h2>
+            <h1>Edit Service</h1>
 
             <div class="form-container">
                 <form method="post">
 
                 <div class="form-group">
-                    <label>Service Name</label><br>
-                    <input type="text" name="service_name" value="<?php echo $service['service_name']; ?>"><br><br>
+                    <label>Service Name</label>
+                    <input type="text" name="service_name" value="<?php echo $service['service_name']; ?>">
                 </div>
                     
                 <div class="form-group">
-                    <label>Description</label><br>
-                    <textarea name="description" rows="4" cols="40"><?php echo $service['description']; ?></textarea><br><br>
+                    <label>Description</label>
+                    <textarea name="description" rows="4" cols="40"><?php echo $service['description']; ?></textarea>
                 </div>
                     
                 <div class="form-group">
-                    <label>Hourly Rate</label><br>
-                    <input type="text" name="hourly_rate" value="<?php echo $service['hourly_rate']; ?>"><br><br>
+                    <label>Hourly Rate</label>
+                    <input type="text" name="hourly_rate" value="<?php echo $service['hourly_rate']; ?>">
                 </div>
                     
                 <div class="form-group">
-                    <label>Active</label><br>
+                    <label>Active</label>
                     <select name="is_active">
                         <option value="1" <?php if($service['is_active']==1) echo "selected"; ?>>Yes</option>
                         <option value="0" <?php if($service['is_active']==0) echo "selected"; ?>>No</option>
-                    </select><br><br>
+                    </select>
                 </div>
                     
                     <button type="submit" class="btn-submit" name="update">Update</button>
