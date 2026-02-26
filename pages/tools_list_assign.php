@@ -29,73 +29,75 @@ $bookings = mysqli_query($conn, "SELECT booking_id FROM bookings ORDER BY bookin
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Booking Tools List</title>
-    <link rel="stylesheet" href="../style.css"> 
+    <head>
+        <meta charset="UTF-8">
+        <title>Booking Tools List</title>
+        <link rel="stylesheet" href="../style.css"> 
 
-</head>
-<body>
-    <?php include "../nav.php"; ?>
-    <div class="content">
-        <h1>Booking Tools</h1>
+    </head>
+    <body>
+        <?php include "../nav.php"; ?>
+        <div class="content">
+            <h1>Booking Tools</h1>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Quantity Total</th>
-                    <th>Quantity Available</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($t = mysqli_fetch_assoc($tools)) { ?>
+            <table>
+                <thead>
                     <tr>
-                        <td><?php echo $t['tool_name']; ?></td>
-                        <td><?php echo $t['quantity_total']; ?></td>
-                        <td><?php echo $t['quantity_available']; ?></td>
+                        <th>ID</th>
+                        <th>Quantity Total</th>
+                        <th>Quantity Available</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php while($t = mysqli_fetch_assoc($tools)) { ?>
+                        <tr>
+                            <td><?php echo $t['tool_name']; ?></td>
+                            <td><?php echo $t['quantity_total']; ?></td>
+                            <td><?php echo $t['quantity_available']; ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
 
-        <hr>
-        
-        <h2>Assign Tool to Booking</h2>
-        
-        <div class="form-container">
-            <form method="post">
-                <div class="form-group">
-                    <label>Booking ID</label>
-                    <select name="booking_id">
-                        <?php while($b = mysqli_fetch_assoc($bookings)) { ?>
-                        <option value="<?php echo $b['booking_id']; ?>">#<?php echo $b['booking_id']; ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Tool</label>
-                    <select name="tool_id">
-                        <?php
-                        $tools2 = mysqli_query($conn, "SELECT * FROM tools ORDER BY tool_name ASC");
-                        while($t2 = mysqli_fetch_assoc($tools2)) {
-                        ?>
-                        <option value="<?php echo $t2['tool_id']; ?>">
-                            <?php echo $t2['tool_name']; ?> (Avail: <?php echo $t2['quantity_available']; ?>)
-                        </option>
-                        <?php } ?>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Qty Used</label>
-                    <input type="number" name="qty_used" min="1" value="1">
-                </div>
-                
-                <button type="submit" class="btn-submit" name="assign">Assign</button>
-            </form>
+            <hr>
+            
+            <div class="form-header">
+                <h2>Assign Tool to Booking</h2>
+            </div>
+            
+            <div class="form-container">
+                <form method="post">
+                    <div class="form-group">
+                        <label>Booking ID</label>
+                        <select name="booking_id">
+                            <?php while($b = mysqli_fetch_assoc($bookings)) { ?>
+                            <option value="<?php echo $b['booking_id']; ?>">#<?php echo $b['booking_id']; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Tool</label>
+                        <select name="tool_id">
+                            <?php
+                            $tools2 = mysqli_query($conn, "SELECT * FROM tools ORDER BY tool_name ASC");
+                            while($t2 = mysqli_fetch_assoc($tools2)) {
+                            ?>
+                            <option value="<?php echo $t2['tool_id']; ?>">
+                                <?php echo $t2['tool_name']; ?> (Avail: <?php echo $t2['quantity_available']; ?>)
+                            </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Qty Used</label>
+                        <input type="number" name="qty_used" min="1" value="1">
+                    </div>
+                    
+                    <button type="submit" class="btn-submit" name="assign">Assign</button>
+                </form>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

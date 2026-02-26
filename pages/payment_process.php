@@ -57,16 +57,16 @@ if (isset($_POST['pay'])) {
         <?php include "../nav.php"; ?>
         
         <div class="content">
-            <h1>Process Payment (Booking #<?php echo $booking_id; ?>)</h1>
+            <div class="form-header">
+                <h1>Process Payment (Booking #<?php echo $booking_id; ?>)</h1>
+            </div>
             
             <div class="form-container">
-            
                 <p>Total Cost: ₱<?php echo number_format($booking['total_cost'],2); ?></p>
                 <p>Total Paid: ₱<?php echo number_format($total_paid,2); ?></p>
                 <p><b>Balance: ₱<?php echo number_format($balance,2); ?></b></p>
                 
                 <p2 style="color:red;"><?php echo $message; ?></p2>
-                
                 
                 <form method="post">
                     <div class="form-group">

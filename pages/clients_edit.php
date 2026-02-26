@@ -37,7 +37,10 @@
         <?php include "../nav.php"; ?>
         
         <div class="content">
-            <h1>Edit Client</h1>
+            <div class="form-header">
+                <h1>Edit Client</h1>
+            </div>
+
 
             <div class="form-container">
                 <p2 style="color:red;"><?php echo $message; ?></p2>

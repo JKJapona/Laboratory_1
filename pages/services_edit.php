@@ -31,7 +31,9 @@
         <?php include "../nav.php"; ?>
         
         <div class="content">
-            <h1>Edit Service</h1>
+            <div class="form-header">
+                <h1>Edit Service</h1>
+            </div>
 
             <div class="form-container">
                 <form method="post">

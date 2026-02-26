@@ -31,7 +31,10 @@ $services = $conn->query("SELECT service_id, service_name, hourly_rate FROM serv
     <?php include "../nav.php"; ?>
 
     <div class="content">
-        <h1>Create New Booking</h1>
+        <div class="form-header">
+            <h1>Create New Booking</h1>
+        </div>
+        
 
         <div class="form-container">
             <form method="POST">
