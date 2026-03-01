@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "db.php";
     
     $clients = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c FROM clients"))['c'];
@@ -21,6 +22,7 @@
         
         <div class="content">
             <h1>Dashboard</h1>
+            <h2>Welcome, <?php echo $_SESSION['username']; ?>!</h2>
             
             <div class="kpi_container">
                 <a href="/assessment_beginner/pages/clients_list.php" class="kpi_card">
